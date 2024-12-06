@@ -13,6 +13,8 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;
+    private String licensePlate;
+    private String parkingSpot;
 
     public Long getId() {
         return id;
@@ -21,11 +23,23 @@ public class Car {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getParkingSpot() {
+        return parkingSpot;
+    }
 
-    private Long Id;
-    private String licensePlate;
-    private String parkingSpot;
+    public void setParkingSpot(String parkingSpot) {
+        this.parkingSpot = parkingSpot;
+    }
 
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+    
     public User getOwner() {
         return owner;
     }
@@ -33,5 +47,4 @@ public class Car {
     public void setOwner(User owner) {
         this.owner = owner;
     }
-
 }
