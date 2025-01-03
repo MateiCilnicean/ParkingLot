@@ -1,5 +1,6 @@
 package com.parking.parkinglot.common;
 
+//Dto = data transfer object
 public class CarDto {
     Long id;
     String licensePlate;

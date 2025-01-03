@@ -37,7 +37,6 @@ public class UsersBean {
 
         for (User user : users) {
             temp.add(new UserDto(user.getId(), user.getEmail(), user.getPassword(), user.getUsername()));
-
         }
         return temp;
     }
