@@ -11,6 +11,9 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
+//We will only allow access here if the user has the WRITE_CARS usergroup.
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_CARS"}))
+
 @WebServlet(name = "AddCarServlet", value = "/AddCarServlet")
 public class AddCarServlet extends HttpServlet {
 

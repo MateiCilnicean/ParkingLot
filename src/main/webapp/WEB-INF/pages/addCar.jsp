@@ -27,7 +27,6 @@
         </div>
 
         <div class="row">
-            <!-- Owner -->
             <div class="col-md 6 mb-3">
                 <label for="owner_id">Owner</label>
                 <select class="custom-select d-block w-100" id="owner_id" name="owner_id" required>
