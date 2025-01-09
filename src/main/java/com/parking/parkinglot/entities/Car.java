@@ -16,6 +16,8 @@ public class Car {
     private String licensePlate;
     private String parkingSpot;
 
+    private CarPhoto photo;
+
     public Long getId() {
         return id;
     }
@@ -46,5 +48,14 @@ public class Car {
 
     public void setOwner(User owner) {
         this.owner = owner;
+    }
+
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public CarPhoto getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(CarPhoto photo) {
+        this.photo = photo;
     }
 }

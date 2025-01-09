@@ -5,6 +5,7 @@
 
 <t:pageTemplate pageTitle="addCar">
     <h1>Add Car</h1>
+
     <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddCarServlet">
         <div class="row">
             <div class="col-md 6 mb-3">
@@ -42,7 +43,6 @@
         </div>
         <br>
 
-        <!-- Submit Button -->
         <!-- whenever we click the Save button when adding a car, the servlet's doPost method will be called. -->
         <div class="row">
             <div class="col-1">

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<t:pageTemplate pageTitle="addCar">
+<t:pageTemplate pageTitle="addUser">
     <h1>Add User</h1>
 
     <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddUserServlet">
