@@ -2,6 +2,7 @@ package com.parking.parkinglot.entities;
 
 import jakarta.persistence.*;
 
+
 @Entity
 public class CarPhoto {
 
@@ -46,6 +47,7 @@ public class CarPhoto {
     }
 
     @OneToOne
+    @JoinColumn(name = "car_id")
     public Car getCar() {
         return car;
     }
@@ -53,4 +55,6 @@ public class CarPhoto {
     public void setCar(Car car) {
         this.car = car;
     }
+
+
 }

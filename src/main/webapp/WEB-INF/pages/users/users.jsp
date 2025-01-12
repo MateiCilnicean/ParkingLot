@@ -16,19 +16,27 @@
         <div class="container text-center">
             <c:forEach var="user" items="${users}">
                 <div class="row">
-                    <div class="col">
-                        <input type="checkbox" name="user_ids" value="${user.id}" />
-                    </div>
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
+                        <div class="col">
+                            <input type="checkbox" name="user_ids" value="${user.id}" />
+                        </div>
+                    </c:if>
                     <div class="col">
                             ${user.username}
                     </div>
                     <div class="col">
                             ${user.email}
                     </div>
+                    <div class="col">
+                        <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
+                            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditUserServlet?id=${user.id}">Edit User</a>
+                        </c:if>
+                    </div>
                 </div>
             </c:forEach>
         </div>
     </form>
+
     <c:if test="${not empty invoices}">
         <h2>Invoices</h2>
         <c:forEach var="username" items="${invoices}" varStatus="status">

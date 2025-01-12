@@ -10,7 +10,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.logging.Logger;
@@ -71,6 +70,26 @@ public class UsersBean {
                         .setParameter("userIds", userIds)
                         .getResultList();
         return usernames;
+    }
+
+    public UserDto findUserById(Long userId) {
+        User user = entityManager.find(User.class, userId);
+        if (user != null) {
+            return new UserDto(user.getId(), user.getUsername(), user.getEmail(), null);
+        }
+        return null;
+    }
+
+    public void updateUser(Long userId, String username, String email, String password) {
+        LOG.info("updateUser");
+
+        User user = entityManager.find(User.class, userId);
+        user.setUsername(username);
+        user.setEmail(email);
+
+        if (password != null && !password.isEmpty()) {
+            user.setPassword(passwordBean.convertToSha256(password));
+        }
     }
 }
 

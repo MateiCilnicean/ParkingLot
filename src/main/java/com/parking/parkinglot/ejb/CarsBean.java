@@ -130,4 +130,5 @@ public class CarsBean {
         CarPhoto photo = photos.get(0); // the first element
         return new CarPhotoDto(photo.getId(), photo.getFilename(), photo.getFileType(), photo.getFileContent());
     }
+
 }
