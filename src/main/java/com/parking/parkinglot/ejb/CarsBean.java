@@ -96,8 +96,13 @@ public class CarsBean {
     public void deleteCarsById(Collection<Long> carIds) {
         LOG.info("deleteCarsById");
 
+
         for (Long carId : carIds) {
             Car car = entityManager.find(Car.class, carId);
+            CarPhoto photo = car.getPhoto();
+            if (photo != null) {
+                entityManager.remove(photo);
+            }
             entityManager.remove(car);
         }
     }
