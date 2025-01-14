@@ -1,6 +1,7 @@
 package com.parking.parkinglot.common;
 
 //Dto = data transfer object
+//dto nu trebuie sa dezvaluie structura entitatii
 public class CarDto {
     Long id;
     String licensePlate;
